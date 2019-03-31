@@ -1,4 +1,4 @@
-import firabase from 'firebase'
+import firebase from 'firebase'
 import firestore from 'firebase/firestore'
 
 var config = {
@@ -9,6 +9,7 @@ var config = {
   storageBucket: "ninja-chat-6d594.appspot.com",
   messagingSenderId: "37989223994"
 };
-const firabaseApp = firebase.initializeApp(config);
+const firebaseApp = firebase.initializeApp(config);
+firebaseApp.firestore().settings({ timestampsInSnapshots: true });
 
-export default firabaseApp.firestore();
+export default firebaseApp.firestore();
